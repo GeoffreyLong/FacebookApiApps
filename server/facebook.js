@@ -11,14 +11,14 @@ function Facebook(accessToken) {
 }
 
 Facebook.prototype.query = function(query, method) {
-    var self = this;
-    var method = (typeof method === 'undefined') ? 'get' : method;
-    var data = Meteor.sync(function(done) {
-        self.fb[method](query, function(err, res) {
-            done(null, res);
-        });
-    });
-    return data.result;
+	var self = this;
+	var method = (typeof method === 'undefined') ? 'get' : method;
+	var data = Meteor.sync(function(done) {
+		self.fb[method](query, function(err, res) {
+			done(null, res);
+			});
+		});
+return data.result;
 }
 
 Facebook.prototype.getUserData = function() {
