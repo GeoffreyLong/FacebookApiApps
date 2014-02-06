@@ -18,16 +18,16 @@ Facebook.prototype.query = function(query, method) {
 			done(null, res);
 			});
 		});
-return data.result;
+	return data.result;
 }
 
 Facebook.prototype.getUserData = function() {
-    return this.query('me');
+    return this.query('/me/videos');
 }
 
 Meteor.methods({
     getUserData: function() {
-        var fb = new Facebook(Meteor.user().services.facebook.accessToken);
+    	var fb = new Facebook(Meteor.user().services.facebook.accessToken);
         var data = fb.getUserData();
         return data;
     }
