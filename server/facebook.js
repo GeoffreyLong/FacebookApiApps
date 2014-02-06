@@ -22,7 +22,7 @@ Facebook.prototype.query = function(query, method) {
 }
 
 Facebook.prototype.getUserData = function() {
-    return this.query('/me/videos');
+    return this.query('me/photos');
 }
 
 Meteor.methods({
