@@ -1,7 +1,6 @@
 if (Meteor.isClient) {
   Template.login.events({
 	  "click #sign-in-facebook": function(e, tmpl){
-		  console.log("helo");
 		  Meteor.loginWithFacebook({ requestPermissions: ['email']},
 				  function (error) {
 				      if (error) {
