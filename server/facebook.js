@@ -21,6 +21,10 @@ Facebook.prototype.query = function(query, method) {
     return data.result;
 }
 
+Facebook.prototype.getUserData = function() {
+    return this.query('me');
+}
+
 Meteor.methods({
     getUserData: function() {
         var fb = new Facebook(Meteor.user().services.facebook.accessToken);
