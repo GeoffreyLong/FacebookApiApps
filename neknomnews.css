@@ -2,8 +2,14 @@
 html, body{
 	height:100%;
 	width:100%;
+	background:#123456;
 }
 .jumbotron{
+	position:absolute;
+	top:10%;
+	left:10%;
+	height:60%;
+	width:80%;
 	text-align:center;
 }
 #login-buttons{
