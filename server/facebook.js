@@ -28,7 +28,12 @@ Facebook.prototype.getUserData = function() {
 Meteor.methods({
     getUserData: function() {
     	var fb = new Facebook(Meteor.user().services.facebook.accessToken);
-        var data = fb.getUserData();
+    	var query = "SELECT src_big, caption, created, like_info FROM photo WHERE object_id IN (SELECT object_id FROM photo_tag WHERE subject=me()) LIMIT 10";
+    	
+    	Meteor.require('fbgraph').fql(query, function (e, res){
+    		console.log(res);
+    	});
+        //var data = fb.getUserData();
         return data;
     }
 });
