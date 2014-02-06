@@ -1,0 +1,11 @@
+/* CSS declarations go here */
+html, body{
+	height:100%;
+	width:100%;
+}
+#login-buttons{
+	position:absolute;
+	width:20%;
+	top:60%;
+	left:40%;
+}
