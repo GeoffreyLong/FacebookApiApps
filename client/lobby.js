@@ -4,9 +4,13 @@ Template.lobby.events({
 	},
 	'click #btn-user-data': function(e) {
 		Meteor.call('getUserData', function(err, data) {
-				$('#result').text(JSON.stringify(data, undefined, 4));
-			});
+			var actual = data.data.data;
+			for(var i = 0; i < actual.length; i++ ) {
+				var newObj = $('"' + actual[i].embed_html + '"');
+				newObj.appendTo($('#result'));
+			}
+		});
 		
-		}
+	}
 		
 });
