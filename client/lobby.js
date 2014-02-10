@@ -4,9 +4,10 @@ Template.lobby.events({
 	},
 	'click #btn-user-data': function(e) {
 		Meteor.call('getFriendCount', function(errOne, data) {
-			for (var j = 0; j< data.data.data[0].friend_count; j+=50){
-				var next = parseInt(j) +50;
-				Meteor.call('getVideos(' + parseInt(j) + ', ' + next + ')', function(errTwo, videos) {
+			var friends = data.data.data[0].friend_count;
+			for (var j = 0; j< friends; j+=50){
+				Meteor.call('getVideos', j, j+50, function(errTwo, data) {
+					console.log(JSON.stringify(data, undefined, 4));
 					var actual = data.data.data;
 					for(var i = 0; i < actual.length; i++ ) {
 						var newObj = $('"' + actual[i].embed_html + '"');
