@@ -32,3 +32,10 @@ html, body{
 	position: absolute;
 	left:10px;
 }
+iframe{
+	display: block;
+	margin: auto;
+	margin-bottom : 50px;
+	position: relative;
+	/*left: -10%; may look better*/
+}
