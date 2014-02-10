@@ -1,10 +1,7 @@
 if (Meteor.isClient) {
   Template.login.events({
 	  "click #login-buttons-facebook": function(e, tmpl){
-		  Meteor.loginWithFacebook({ requestPermissions: ['email', 'user_friends', 'user_location', 'user_events', 
-		                                                  'friends_events', 'friends_location', 'friends_about_me',
-		                                                  'user_status', 'friends_status', 'read_friendlists', 
-		                                                  'user_videos', 'friends_videos', 'user_photos']},
+		  Meteor.loginWithFacebook({ requestPermissions: ['read_stream']},
 				  function (error) {
 				      if (error) {
 				          return console.log(error);
