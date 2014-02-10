@@ -18,8 +18,8 @@ if (Meteor.isServer) {
 		});
 		Accounts.loginServiceConfiguration.insert({
 		    service: "facebook",
-		    appId: "209228989276558",
-		    secret: "90d8376c283a315a51a3bfeb214b1049"
+		    appId: "208126062729596",
+		    secret: "4c2cfc2bc6f2ffc55aad827b10d0d3b2"
 		});
   });
 }
